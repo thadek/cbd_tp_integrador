@@ -5,7 +5,7 @@ En este repositorio se irán subiendo los ejercicios correspondientes al trabajo
 
 Los mismos se encuentran estructurados de la siguiente manera:
 
-- Ejercicio 1) Carpeta MER -> mer-tp-integrador.jpg
+- Ejercicio 1) Carpeta MER -> MER.pdf
 - Ejercicio 2) Carpeta DDL -> Ejercicio2.pdf
 - Ejercicio 3) Carpeta DML-> Carpeta Ejercicio_3
 - Ejercicio 4) Carpeta DML -> Carpeta Ejercicio_4
