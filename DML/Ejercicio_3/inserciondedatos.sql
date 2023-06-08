@@ -137,7 +137,10 @@ VALUES('1','DNI','36988147','1','1','1','2021-05-01');
 
 INSERT INTO `inscripcion`(`NumeroInscripcion`, `tipoDocAlumno`, `nroDocumentoAlumno`, `NroAsiento`, `NroAula`, `idCurso`, `fechaInscripcion`)
 VALUES('2','DNI','34563147','2','1','1','2021-05-01');
+INSERT INTO `inscripcion`(`NumeroInscripcion`, `tipoDocAlumno`, `nroDocumentoAlumno`, `NroAsiento`, `NroAula`, `idCurso`, `fechaInscripcion`)
+VALUES(4, 'DNI','3618849',1,3,2,'2022-04-27'),
 
+(5, 'DNI','37896321',22,2,1,'2022-04-27')
 
 DELETE FROM profesor WHERE (tipoDoc,NroDocumento) NOT IN (SELECT tipoDocProfesor,NroDocumentoProfesor 
 FROM aula INNER JOIN profesor ON(tipoDocProfesor=tipoDoc AND NroDocumentoProfesor=NroDocumento ));
