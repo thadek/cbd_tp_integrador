@@ -6,7 +6,7 @@ CREATE TABLE Persona (
     nombre VARCHAR(50) NOT NULL,
     fechaNacimiento DATE NOT NULL,
     telefono VARCHAR(50) NOT NULL,
-    email VARCHAR(50) NOT NULL,
+    correoElectronico VARCHAR(50) NOT NULL,
     PRIMARY KEY (tipoDoc, nroDocumento)
 );
 
