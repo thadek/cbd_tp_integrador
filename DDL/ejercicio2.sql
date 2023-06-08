@@ -38,8 +38,8 @@ CREATE TABLE Aula (
     numero INT NOT NULL,
     tipo VARCHAR(15) NOT NULL,
     cantidadAsientos INT NOT NULL,
-    tipoDocProfesor VARCHAR(3) NOT NULL,
-    NroDocumentoProfesor VARCHAR(11) NOT NULL,
+    tipoDocProfesor VARCHAR(3) NULL,
+    NroDocumentoProfesor VARCHAR(11) NULL,
     PRIMARY KEY (numero),
     FOREIGN KEY (tipoDocProfesor, NroDocumentoProfesor) REFERENCES Profesor (tipoDoc, nroDocumento)
     ON UPDATE CASCADE
