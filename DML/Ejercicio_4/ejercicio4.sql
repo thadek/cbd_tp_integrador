@@ -8,7 +8,7 @@ WHERE i.fechaInscripcion = DATE_SUB(c.Fecha, INTERVAL 5 DAY);
 
 --B)Seleccionar los asientos de las aulas, tipo ’Gandes’, que nunca han sido ocupados en inscripciones. Listar 
 --idAula, NroAsiento, fila. Utilizar Not Exists
-SELECT `nroAula`, `nroAsiento`, `fila` FROM `asiento` INNER JOIN aula ON (aula.numero= asiento.nroAula AND aula.tipo = "GRANDE") 
+SELECT nroAula, nroAsiento, fila FROM asiento INNER JOIN aula ON (aula.numero= asiento.nroAula AND aula.tipo = "GRANDE") 
 WHERE NOT EXISTS (SELECT * FROM inscripcion WHERE inscripcion.NroAsiento = asiento.nroAsiento);
 
 --c) Listar la cantidad de cursos por cada tema principal 

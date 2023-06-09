@@ -5,8 +5,8 @@ CREATE TABLE Persona (
     apellido VARCHAR(50) NOT NULL,
     nombre VARCHAR(50) NOT NULL,
     fechaNacimiento DATE NOT NULL,
-    telefono VARCHAR(50) NOT NULL,
-    correoElectronico VARCHAR(50) NOT NULL,
+    telefono VARCHAR(50),
+    correoElectronico VARCHAR(50),
     PRIMARY KEY (tipoDoc, nroDocumento)
 );
 
@@ -99,7 +99,6 @@ CREATE TABLE Inscripcion (
     FOREIGN KEY (idCurso) REFERENCES Curso (IdCurso)
     ON UPDATE CASCADE
     ON DELETE RESTRICT,
-    -- DUDA CON ENUNCIADO que figura en MR nroAsiento, nroAula y idCurso como una clave compuesta unica.
     FOREIGN KEY (nroAula,nroAsiento) REFERENCES Asiento (nroAula,nroAsiento)
     ON UPDATE CASCADE
     ON DELETE RESTRICT
@@ -111,7 +110,7 @@ CREATE TABLE Prefiere (
     tipoDocAlumno VARCHAR(3) NOT NULL,
     NroDocumentoAlumno VARCHAR(11) NOT NULL,
     NombreTema VARCHAR(50) NOT NULL,
-    Motivo VARCHAR(50) NOT NULL,
+    Motivo VARCHAR(50),
     PRIMARY KEY (tipoDocAlumno, NroDocumentoAlumno, NombreTema),
     FOREIGN KEY (tipoDocAlumno, NroDocumentoAlumno) REFERENCES Alumno (tipoDoc, nroDocumento)
     ON UPDATE CASCADE
