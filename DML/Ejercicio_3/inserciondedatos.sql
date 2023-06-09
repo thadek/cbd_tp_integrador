@@ -127,9 +127,6 @@ VALUES
 (7, '2022-04-01', '19:30:00', 2, 'Ciencias Naturales', 'Base de Datos'),
 (8, '2022-09-01', '19:30:00', 2, 'Ciencias Naturales', 'Ciencias Sociales');
 
----- modificacion necesaria para que el campo NroDocumentoProfesor sea null
-ALTER TABLE aula MODIFY tipoDocProfesor varchar(3) null;
-ALTER TABLE aula MODIFY NroDocumentoProfesor varchar(11) null;
 
 -- se completa latabla de inscripcion
 INSERT INTO `inscripcion`(`NumeroInscripcion`, `tipoDocAlumno`, `nroDocumentoAlumno`, `NroAsiento`, `NroAula`, `idCurso`, `fechaInscripcion`) 
