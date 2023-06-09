@@ -103,6 +103,7 @@ INSERT INTO `temario`(`Nombre`, `Contenido`) VALUES ('Matematica','Suma, Resta, 
 INSERT INTO `temario`(`Nombre`, `Contenido`) VALUES ('Lengua','Sustantivo, Verbo, Adjetivo, Adverbio');
 INSERT INTO `temario`(`Nombre`, `Contenido`) VALUES ('Ciencias Sociales','Historia, Geografia, Economia, Politica');
 INSERT INTO `temario`(`Nombre`, `Contenido`) VALUES ('Ciencias Naturales','Biologia, Fisica, Quimica, Astronomia');
+INSERT INTO `temario`(`Nombre`, `Contenido`) VALUES ('Base de Datos','SQL, MySQL, Oracle, PostgreSQL');
 
 -- Se completa la tabla con la eleccion del alumno que temario prefiere
 INSERT INTO `prefiere`(`tipoDocAlumno`, `NroDocumentoAlumno`, `NombreTema`, `Motivo`) 
@@ -116,16 +117,15 @@ VALUES ('DNI','34742159','Ciencias Naturales','Cuidar al planeta');
 
 -- Se completa la tabla curso
 INSERT INTO `curso`(`IdCurso`, `Fecha`, `Hora`, `NroAula`, `NombreTemaPrincipal`, `NombreTemaSecundario`)
-VALUES ('1','2022-05-01','09:00:00','1','Matematica','Lengua');
-
-INSERT INTO `curso`(`IdCurso`, `Fecha`, `Hora`, `NroAula`, `NombreTemaPrincipal`, `NombreTemaSecundario`)
-VALUES ('2','2022-05-01','08:00:00','2','Ciencias Sociales','Ciencias Naturales');
-
-INSERT INTO `curso`(`IdCurso`, `Fecha`, `Hora`, `NroAula`, `NombreTemaPrincipal`, `NombreTemaSecundario`)
-VALUES ('3','2022-04-01','10:00:00','3','Lengua','Matematica');
-
-INSERT INTO `curso`(`IdCurso`, `Fecha`, `Hora`, `NroAula`, `NombreTemaPrincipal`, `NombreTemaSecundario`)
-VALUES ('4','2022-04-01','09:00:00','2','Ciencias Naturales', 'Ciencias Sociales');
+VALUES 
+(1, '2022-05-02', '09:00:00', 1, 'Matematica', 'Lengua'),
+(2, '2022-05-02', '08:00:00', 2, 'Ciencias Sociales', 'Ciencias Naturales'),
+(3, '2022-06-01', '10:00:00', 3, 'Lengua', 'Matematica'),
+(4, '2022-06-24', '17:00:00', 2, 'Ciencias Naturales', 'Ciencias Sociales'),
+(5, '2022-02-01', '13:00:00', 2, 'Matematica', 'Ciencias Sociales'),
+(6, '2022-07-01', '09:00:00', 2, 'Base de Datos', 'Ciencias Sociales'),
+(7, '2022-04-01', '19:30:00', 2, 'Ciencias Naturales', 'Base de Datos'),
+(8, '2022-09-01', '19:30:00', 2, 'Ciencias Naturales', 'Ciencias Sociales');
 
 ---- modificacion necesaria para que el campo NroDocumentoProfesor sea null
 ALTER TABLE aula MODIFY tipoDocProfesor varchar(3) null;
@@ -133,13 +133,14 @@ ALTER TABLE aula MODIFY NroDocumentoProfesor varchar(11) null;
 
 -- se completa latabla de inscripcion
 INSERT INTO `inscripcion`(`NumeroInscripcion`, `tipoDocAlumno`, `nroDocumentoAlumno`, `NroAsiento`, `NroAula`, `idCurso`, `fechaInscripcion`) 
-VALUES('1','DNI','36988147',1,1,1,'2021-05-01');
-
-INSERT INTO `inscripcion`(`NumeroInscripcion`, `tipoDocAlumno`, `nroDocumentoAlumno`, `NroAsiento`, `NroAula`, `idCurso`, `fechaInscripcion`)
-VALUES('2','DNI','34563147',2,1,1,'2021-05-01');
-INSERT INTO `inscripcion`(`NumeroInscripcion`, `tipoDocAlumno`, `nroDocumentoAlumno`, `NroAsiento`, `NroAula`, `idCurso`, `fechaInscripcion`)
-VALUES(4, 'DNI','3618849',1,3,2,'2022-04-27'),
-(5, 'DNI','37896321',22,2,1,'2022-04-27')
+VALUES
+(1, 'DNI', '36988147', 6, 1, 1, '2022-04-27'),
+(2, 'DNI', '36988147', 6, 1, 2, '2022-04-29'),
+(3, 'DNI', '3618849', 1, 2, 3, '2022-06-28'),
+(4, 'DNI', '3618849', 1, 3, 2, '2022-04-27'),
+(5, 'DNI', '37896321', 22, 2, 1, '2022-04-27'),
+(6, 'DNI', '34742159', 9, 2, 7, '2022-04-27'),
+(7, 'DNI', '34563147', 8, 2, 7, '2022-04-27');
 
 -- se eliminan los profesores que no tienen aula asignada
 DELETE FROM profesor WHERE (tipoDoc,NroDocumento) NOT IN (SELECT tipoDocProfesor,NroDocumentoProfesor 
